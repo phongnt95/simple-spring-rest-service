@@ -12,13 +12,18 @@ public class GreetingController {
     private final AtomicLong counter = new AtomicLong();
 
     @RequestMapping("/greeting")
+    public String index(@RequestParam(value="name", defaultValue="World") String name) {
+        return "Hello, Welcome!!!";
+    }
+
+    @RequestMapping("/greeting")
     public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
         return new Greeting(counter.incrementAndGet(),
                             String.format(template, name));
     }
 
     @RequestMapping("/counter")
-    public Object counter(@RequestParam(value="name", defaultValue="World") String name) {
-        return (Object)counter.incrementAndGet();
+    public long counter(@RequestParam(value="name", defaultValue="World") String name) {
+        return counter.incrementAndGet();
     }
 }
