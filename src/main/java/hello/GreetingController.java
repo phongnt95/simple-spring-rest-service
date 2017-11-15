@@ -69,7 +69,8 @@ public class GreetingController {
             }
 
             model.put("records", output);
-            return "db";
+//            return "db";
+            return model.get("records").toString();
         } catch (Exception e) {
             model.put("message", e.getMessage());
             return "error";
