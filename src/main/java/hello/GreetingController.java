@@ -43,11 +43,13 @@ public class GreetingController {
 
     @RequestMapping("/env")
     public String env(@RequestParam(value="name", defaultValue="World") String name) {
-        return System.getenv().get("MyEnv");
+//        return System.getenv().get("MyEnv");
+        return dbUrl;
     }
 
-//    @Value("${spring.datasource.url}")
-//    private String dbUrl;
+
+    @Value("${spring.datasource.url}")
+    private String dbUrl;
 //
 //    @Autowired
 //    private DataSource dataSource;
