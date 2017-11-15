@@ -51,8 +51,8 @@ public class GreetingController {
     @Value("${spring.datasource.url}")
     private String dbUrl;
 //
-//    @Autowired
-//    private DataSource dataSource;
+    @Autowired
+    private DataSource dataSource;
 //
 //
 //    @RequestMapping("/db")
@@ -76,14 +76,14 @@ public class GreetingController {
 //        }
 //    }
 //
-//    @Bean
-//    public DataSource dataSource() throws SQLException {
-//        if (dbUrl == null || dbUrl.isEmpty()) {
-//            return new HikariDataSource();
-//        } else {
-//            HikariConfig config = new HikariConfig();
-//            config.setJdbcUrl(dbUrl);
-//            return new HikariDataSource(config);
-//        }
-//    }
+    @Bean
+    public DataSource dataSource() throws SQLException {
+        if (dbUrl == null || dbUrl.isEmpty()) {
+            return new HikariDataSource();
+        } else {
+            HikariConfig config = new HikariConfig();
+            config.setJdbcUrl(dbUrl);
+            return new HikariDataSource(config);
+        }
+    }
 }
