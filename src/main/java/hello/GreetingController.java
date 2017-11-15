@@ -26,4 +26,9 @@ public class GreetingController {
     public long counter(@RequestParam(value="name", defaultValue="World") String name) {
         return counter.incrementAndGet();
     }
+
+    @RequestMapping("/env")
+    public String env(@RequestParam(value="name", defaultValue="World") String name) {
+        return System.getenv().get("MyEnv");
+    }
 }
