@@ -28,6 +28,16 @@
             <artifactId>json-path</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.7.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>2.5.1</version>
+        </dependency>
     </dependencies>
 
     <properties>
@@ -48,12 +58,10 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.7.0</version>
                 <configuration>
-                    <configuration>
-                        <source>1.7</source>
-                        <target>1.7</target>
-                        <fork>true</fork>
-                        <executable>C:\Program Files\Java\jdk1.8.0_151\bin\javac</executable>
-                    </configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <fork>true</fork>
+                    <executable>C:\Program Files\Java\jdk1.8.0_151\bin\javac</executable>
                 </configuration>
             </plugin>
         </plugins>
